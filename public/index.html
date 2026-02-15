@@ -24,13 +24,32 @@ body::before{
   width:100%;
   height:100%;
   background-image:
-    radial-gradient(2px 2px at 20% 30%, white, transparent),
-    radial-gradient(2px 2px at 80% 70%, white, transparent),
-    radial-gradient(1px 1px at 50% 50%, white, transparent),
-    radial-gradient(2px 2px at 90% 10%, white, transparent);
+  radial-gradient(2px 2px at 20% 30%, white, transparent),
+  radial-gradient(2px 2px at 80% 70%, white, transparent),
+  radial-gradient(1px 1px at 50% 50%, white, transparent),
+  radial-gradient(2px 2px at 90% 10%, white, transparent),
+  radial-gradient(1px 1px at 10% 80%, white, transparent),
+  radial-gradient(2px 2px at 60% 20%, white, transparent),
+  radial-gradient(1px 1px at 30% 60%, white, transparent),
+  radial-gradient(2px 2px at 75% 40%, white, transparent);
   background-repeat:repeat;
   animation:moveStars 20s linear infinite;
   opacity:1;
+  pointer-events:none;
+  z-index:0;
+}
+
+  /* Nebula Haze */
+body::after{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(56,189,248,0.15), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(125,211,252,0.1), transparent 50%);
   pointer-events:none;
   z-index:0;
 }
