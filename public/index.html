@@ -6,16 +6,110 @@
 <title>Divine Echo | I Have a Story and I Want to Tell It</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 <style>
-body{background:#0b1120;color:white;font-family:sans-serif;text-align:center;padding:2rem;}
-h1,h2,h3{color:#7dd3fc}
-.glow-cross{font-size:60px;color:#7dd3fc;text-shadow:0 0 20px #38bdf8,0 0 40px #7dd3fc,0 0 60px #38bdf8;animation:pulse 2s infinite;margin:1rem auto}
-@keyframes pulse{0%,100%{text-shadow:0 0 20px #38bdf8,0 0 40px #7dd3fc,0 0 60px #38bdf8;}50%{text-shadow:0 0 30px #7dd3fc,0 0 50px #38bdf8,0 0 70px #7dd3fc;}}
-.section-box{background:#111827;padding:2rem;border-radius:12px;margin:2rem auto;max-width:900px;text-align:left;}
-button{background:#38bdf8;color:#0b1120;padding:1rem 2rem;border:none;border-radius:12px;font-size:1.1rem;cursor:pointer;}
-button:hover{background:#7dd3fc;}
-audio,video{width:100%;margin-top:1rem;border-radius:8px;}
-input,textarea{margin-top:0.5rem;}
+body{
+  margin:0;
+  font-family:sans-serif;
+  color:white;
+  text-align:center;
+  background: radial-gradient(ellipse at bottom, #0b1120 0%, #000000 100%);
+  overflow-x:hidden;
+}
+
+/* Animated Starfield */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 80% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(2px 2px at 90% 10%, white, transparent);
+  background-repeat:repeat;
+  animation:moveStars 120s linear infinite;
+  opacity:0.3;
+  z-index:-1;
+}
+
+@keyframes moveStars{
+  from{transform:translateY(0);}
+  to{transform:translateY(-1000px);}
+}
+
+h1,h2,h3{color:#a5f3fc}
+
+/* Divine Glow Behind Cross */
+.glow-cross{
+  font-size:70px;
+  position:relative;
+  margin:1.5rem auto;
+  color:#7dd3fc;
+  text-shadow:0 0 20px #38bdf8,0 0 40px #7dd3fc,0 0 60px #38bdf8;
+}
+
+.glow-cross::before{
+  content:"";
+  position:absolute;
+  width:200px;
+  height:200px;
+  background: radial-gradient(circle, rgba(56,189,248,0.4) 0%, transparent 70%);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:-1;
+}
+
+/* Glassmorphism Cards */
+.section-box{
+  backdrop-filter:blur(12px);
+  background:rgba(17,24,39,0.6);
+  border:1px solid rgba(125,211,252,0.2);
+  padding:2rem;
+  border-radius:20px;
+  margin:2rem auto;
+  max-width:900px;
+  text-align:left;
+  transition:all 0.5s ease;
+}
+
+.section-box:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 30px rgba(56,189,248,0.3);
+}
+
+/* Smooth Section Fade-in */
+.section-box{
+  opacity:0;
+  animation:fadeIn 1.2s forwards;
+}
+
+@keyframes fadeIn{
+  to{opacity:1;}
+}
+
+button{
+  background:#38bdf8;
+  color:#0b1120;
+  padding:0.8rem 1.5rem;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+button:hover{
+  background:#7dd3fc;
+  transform:scale(1.05);
+}
+
+audio,video{
+  width:100%;
+  margin-top:1rem;
+  border-radius:12px;
+}
 </style>
+
 </head>
 <body>
 <main class="container">
