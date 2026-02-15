@@ -10,10 +10,11 @@ body{background:#0b1120;color:white;font-family:sans-serif;text-align:center;pad
 h1,h2,h3{color:#7dd3fc}
 .glow-cross{font-size:60px;color:#7dd3fc;text-shadow:0 0 20px #38bdf8,0 0 40px #7dd3fc,0 0 60px #38bdf8;animation:pulse 2s infinite;margin:1rem auto}
 @keyframes pulse{0%,100%{text-shadow:0 0 20px #38bdf8,0 0 40px #7dd3fc,0 0 60px #38bdf8;}50%{text-shadow:0 0 30px #7dd3fc,0 0 50px #38bdf8,0 0 70px #7dd3fc;}}
-.section-box{background:#111827;padding:2rem;border-radius:12px;margin:2rem auto;max-width:800px;text-align:left;}
-button{background:#38bdf8;color:#0b1120;padding:1rem 2rem;border:none;border-radius:12px;font-size:1.2rem;cursor:pointer;}
+.section-box{background:#111827;padding:2rem;border-radius:12px;margin:2rem auto;max-width:900px;text-align:left;}
+button{background:#38bdf8;color:#0b1120;padding:1rem 2rem;border:none;border-radius:12px;font-size:1.1rem;cursor:pointer;}
 button:hover{background:#7dd3fc;}
 audio,video{width:100%;margin-top:1rem;border-radius:8px;}
+input,textarea{margin-top:0.5rem;}
 </style>
 </head>
 <body>
@@ -36,12 +37,23 @@ audio,video{width:100%;margin-top:1rem;border-radius:8px;}
 </div>
 
 <div class="section-box">
-<h2>Upload Media</h2>
+<h2>Upload Media (Podcast / Reel / Video)</h2>
 <form id="uploadForm">
 <input type="file" name="media" required>
 <button type="submit">Upload</button>
 </form>
 <div id="mediaGallery"></div>
+</div>
+
+<div class="section-box">
+<h2>Ongoing Projects</h2>
+<p>Upload discussions, sermons, quantum metaphysical explorations, reels and podcasts.</p>
+</div>
+
+<div class="section-box">
+<h2>Podcast Feed</h2>
+<p>Your RSS feed will be available at:</p>
+<p><strong>/podcast</strong></p>
 </div>
 
 </main>
